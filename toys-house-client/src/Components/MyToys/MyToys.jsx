@@ -64,13 +64,13 @@ const MyToys = () => {
                         </td>
                         <td>34</td>
                         <th>
-                        <button className="btn btn-warning btn-outline btn-xs mr-2">Update</button>
+                            <button className="btn btn-warning btn-outline btn-xs mr-2">Update</button>
                             <button className="btn btn-error btn-outline btn-xs">Delete</button>
                         </th>
                     </tr>
-                    
+
                 </tbody>
-                
+
 
             </table>
         </div>
