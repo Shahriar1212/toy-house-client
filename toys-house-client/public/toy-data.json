@@ -1,0 +1,69 @@
+[
+    {
+      "index": 1,
+      "name": "Spiderman Action Figure",
+      "price": 19.99,
+      "rating": 4.5,
+      "seller-name": "Toyland",
+      "seller-email": "info@toyland.com",
+      "category-id": 2,
+      "available-quantity": 10,
+      "toy-description": "Bring home the web-slinging hero and recreate exciting adventures!"
+    },
+    {
+      "index": 2,
+      "name": "Iron Man Helmet",
+      "price": 29.99,
+      "rating": 4.8,
+      "seller-name": "SuperToys",
+      "seller-email": "sales@supertoys.com",
+      "category-id": 1,
+      "available-quantity": 5,
+      "toy-description": "Become Tony Stark with this impressive Iron Man helmet replica."
+    },
+    {
+      "index": 3,
+      "name": "Thanos Infinity Gauntlet",
+      "price": 39.99,
+      "rating": 4.7,
+      "seller-name": "Collectibles Unlimited",
+      "seller-email": "contact@collectiblesunlimited.com",
+      "category-id": 1,
+      "available-quantity": 3,
+      "toy-description": "Own the most powerful artifact in the universe and control reality itself."
+    },
+    {
+      "index": 4,
+      "name": "Transformer Optimus Prime",
+      "price": 49.99,
+      "rating": 4.6,
+      "seller-name": "RoboToys",
+      "seller-email": "support@robotoys.com",
+      "category-id": 3,
+      "available-quantity": 7,
+      "toy-description": "Witness the iconic Autobot leader transform from truck to robot and protect Earth."
+    },
+    {
+      "index": 5,
+      "name": "Captain America Shield",
+      "price": 24.99,
+      "rating": 4.4,
+      "seller-name": "Heroic Merchandise",
+      "seller-email": "sales@heroicmerch.com",
+      "category-id": 1,
+      "available-quantity": 12,
+      "toy-description": "Defend justice with this authentic replica of Captain America's shield."
+    },
+    {
+      "index": 6,
+      "name": "Hulk Smash Hands",
+      "price": 14.99,
+      "rating": 4.3,
+      "seller-name": "Smash Toys",
+      "seller-email": "info@smashtoys.com",
+      "category-id": 1,
+      "available-quantity": 8,
+      "toy-description": "Unleash your inner Hulk and let the smashing begin with these oversized hands."
+    }
+  ]
+  
