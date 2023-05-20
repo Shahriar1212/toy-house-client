@@ -43,7 +43,7 @@ const Header = () => {
                         <img src={ava} />
                     </div>
                 </div>
-                <a className="btn">Login</a>
+                <Link className="btn" to='/login'>Login</Link>
             </div>
 
         </div>
