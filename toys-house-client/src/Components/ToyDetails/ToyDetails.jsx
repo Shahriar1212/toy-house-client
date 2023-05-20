@@ -25,6 +25,9 @@ const ToyDetails = () => {
                                     fullSymbol={<FaStar></FaStar>} />
                                 <span className="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 tex=t-xs font-semibold">4.0</span>
                             </div>
+                            <p className="badge badge-ghost badge-sm mb-3 mt-2 p-3">Shahriar Hasan Chowdhury</p>
+                            <br />
+                            <p className="badge badge-ghost badge-sm mb-3 p-3">chowdhury.shahriar12@gmail.com</p>
 
 
 

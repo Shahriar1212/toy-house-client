@@ -17,14 +17,17 @@ const Home = () => {
             <PhotoGalary></PhotoGalary>
 
             <Tabs>
-                <TabList  className="text-center border-none">
+                <TabList className="text-center border-none">
                     <Tab>Title 1</Tab>
                     <Tab>Title 2</Tab>
                     <Tab>Title 3</Tab>
                 </TabList>
 
                 <TabPanel className="flex">
-                    <ToyCard></ToyCard>
+                    <div className="flex">
+                        <ToyCard></ToyCard>
+                        <ToyCard></ToyCard>
+                    </div>
                 </TabPanel>
 
                 <TabPanel className="flex">
