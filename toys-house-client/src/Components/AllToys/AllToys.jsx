@@ -1,6 +1,7 @@
 import React from 'react';
 
 import img1 from '../../assets/images/bumble-bee.jpg'
+import { Link } from 'react-router-dom';
 
 const AllToys = () => {
     return (
@@ -38,7 +39,7 @@ const AllToys = () => {
                         </td>
                         <td>34</td>
                         <th>
-                            <button className="btn btn-ghost btn-xs">view details</button>
+                            <Link to="/toydetails" className="btn btn-ghost btn-xs">view details</Link>
                         </th>
                     </tr>
                     {/* row 2 */}

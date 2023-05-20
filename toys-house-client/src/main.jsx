@@ -13,6 +13,8 @@ import ToyDetails from './Components/ToyDetails/ToyDetails.jsx';
 import AuthProviders from './Providers/AuthProviders.jsx';
 import AllToys from './Components/AllToys/AllToys';
 import MyToys from './Components/MyToys/MyToys';
+import AddToy from './Components/AddToy/AddToy';
+import Blogs from './Components/Blogs/Blogs';
 
 
 const router = createBrowserRouter([
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "mytoys",
         element: <MyToys></MyToys>
+      },
+      {
+        path: "/addtoy",
+        element: <AddToy></AddToy>
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>
       }
     ]
   },
