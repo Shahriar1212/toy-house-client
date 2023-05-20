@@ -17,7 +17,7 @@ const Home = () => {
             <PhotoGalary></PhotoGalary>
 
             <Tabs>
-                <TabList>
+                <TabList  className="text-center border-none">
                     <Tab>Title 1</Tab>
                     <Tab>Title 2</Tab>
                     <Tab>Title 3</Tab>

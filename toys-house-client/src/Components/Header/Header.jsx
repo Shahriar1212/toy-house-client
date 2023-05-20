@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ava from '../../assets/images/avater.jpg'
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const Header = () => {
+
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .then(error => {
+                console.error(error);
+            })
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -38,12 +51,22 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="avatar pr-3">
-                    <div className="w-12 rounded-full">
-                        <img src={ava} />
-                    </div>
-                </div>
-                <Link className="btn" to='/login'>Login</Link>
+
+               
+
+                {
+                    user ?
+                        <>
+                            <div className="avatar pr-3">
+                                <div className="w-12 rounded-full">
+                                    <img src={user.photoURL} />
+                                </div>
+                            </div>
+                            <button onClick={handleLogOut} className="btn">Log Out</button>
+                        </>
+                        :
+                        <Link className="btn" to='/login'>Login</Link>
+                }
             </div>
 
         </div>
