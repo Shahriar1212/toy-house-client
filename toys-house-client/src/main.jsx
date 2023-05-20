@@ -15,6 +15,7 @@ import AllToys from './Components/AllToys/AllToys';
 import MyToys from './Components/MyToys/MyToys';
 import AddToy from './Components/AddToy/AddToy';
 import Blogs from './Components/Blogs/Blogs';
+import NotFound from './Components/NotFound/NotFound';
 
 
 const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '*',
+    element: <NotFound></NotFound>,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
