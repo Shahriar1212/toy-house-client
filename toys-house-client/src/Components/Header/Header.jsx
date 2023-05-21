@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import ava from '../../assets/images/avater.jpg'
 import { AuthContext } from '../../Providers/AuthProviders';
+import logo from '../../assets/logo1.png'
 
 const Header = () => {
 
@@ -41,7 +41,9 @@ const Header = () => {
                         }
                     </ul>
                 </div>
+                <img src={logo} className='w-[150px] h-[100px]' alt="" />
                 <a className="btn btn-ghost normal-case text-xl">Toys House</a>
+                
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
