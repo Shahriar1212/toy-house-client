@@ -17,9 +17,6 @@ const MyToys = () => {
             .then(data => setMyToys(data));
     }, [url])
 
-    console.log(myToys);
-
-
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({

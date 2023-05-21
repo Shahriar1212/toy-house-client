@@ -17,6 +17,7 @@ import AddToy from './Components/AddToy/AddToy';
 import Blogs from './Components/Blogs/Blogs';
 import NotFound from './Components/NotFound/NotFound';
 import PrivateRoutes from './routes/PrivateRoutes';
+import UpdateMyToy from './Components/MyToys/UpdateMyToy';
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>
+      },
+      {
+        path: "/updatetoy/:id",
+        element: <UpdateMyToy></UpdateMyToy>,
+        loader: ({params}) => fetch(`https://toy-house-server-cyan.vercel.app/toys/${params.id}`)
       }
     ]
   },
