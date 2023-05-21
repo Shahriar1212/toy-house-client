@@ -5,11 +5,18 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import 'react-tabs/style/react-tabs.css';
 import ToyCard from "../ToyCard/ToyCard";
-// or
-// import 'react-tabs/style/react-tabs.scss';
-// or
-// import 'react-tabs/style/react-tabs.less';
+import { useLoaderData } from "react-router-dom";
+
 const Home = () => {
+
+
+    const toys = useLoaderData();
+    console.log(toys);
+    const category1Toys = toys.filter(toy => toy.category === 1);
+    const category2Toys = toys.filter(toy => toy.category === 2);
+    const category3Toys = toys.filter(toy => toy.category === 3);
+    console.log(category1Toys);
+
     return (
         <div>
 
@@ -18,24 +25,39 @@ const Home = () => {
 
             <Tabs>
                 <TabList className="text-center border-none">
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
-                    <Tab>Title 3</Tab>
+                    <Tab>Avengers</Tab>
+                    <Tab>Spider Man</Tab>
+                    <Tab>Transformers</Tab>
                 </TabList>
 
                 <TabPanel className="flex">
                     <div className="flex">
-                        <ToyCard></ToyCard>
-                        <ToyCard></ToyCard>
+                        {
+                            category1Toys.map(toy => <ToyCard key={toy._id}
+                                toy={toy}
+                            ></ToyCard>)
+                        }
                     </div>
                 </TabPanel>
 
                 <TabPanel className="flex">
-                    <ToyCard></ToyCard>
+                    <div className="flex">
+                        {
+                            category2Toys.map(toy => <ToyCard key={toy._id}
+                                toy={toy}
+                            ></ToyCard>)
+                        }
+                    </div>
                 </TabPanel>
 
                 <TabPanel className="flex">
-                    <ToyCard></ToyCard>
+                    <div className="flex">
+                        {
+                            category3Toys.map(toy => <ToyCard key={toy._id}
+                                toy={toy}
+                            ></ToyCard>)
+                        }
+                    </div>
                 </TabPanel>
             </Tabs>
 

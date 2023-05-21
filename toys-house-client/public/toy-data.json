@@ -1,6 +1,6 @@
 [
     {
-      "index": 1,
+      "img": "https://i.ibb.co/pKFLTmh/spiderman3.jpg",
       "name": "Spiderman Action Figure",
       "price": 19.99,
       "rating": 4.5,
@@ -11,7 +11,7 @@
       "toy-description": "Bring home the web-slinging hero and recreate exciting adventures!"
     },
     {
-      "index": 2,
+      "img": "https://i.ibb.co/zNNFtfw/iron-man.jpg",
       "name": "Iron Man Helmet",
       "price": 29.99,
       "rating": 4.8,
@@ -22,7 +22,7 @@
       "toy-description": "Become Tony Stark with this impressive Iron Man helmet replica."
     },
     {
-      "index": 3,
+      "img": "https://i.ibb.co/TgDPqNf/thanos.jpg",
       "name": "Thanos Infinity Gauntlet",
       "price": 39.99,
       "rating": 4.7,
@@ -33,7 +33,7 @@
       "toy-description": "Own the most powerful artifact in the universe and control reality itself."
     },
     {
-      "index": 4,
+      "img": "https://i.ibb.co/hZPxXyT/prime-removebg.png",
       "name": "Transformer Optimus Prime",
       "price": 49.99,
       "rating": 4.6,
@@ -44,7 +44,7 @@
       "toy-description": "Witness the iconic Autobot leader transform from truck to robot and protect Earth."
     },
     {
-      "index": 5,
+      "img": "https://i.ibb.co/VjdJ64T/captain.jpg",
       "name": "Captain America Shield",
       "price": 24.99,
       "rating": 4.4,
@@ -55,15 +55,15 @@
       "toy-description": "Defend justice with this authentic replica of Captain America's shield."
     },
     {
-      "index": 6,
-      "name": "Hulk Smash Hands",
+      "img": "https://i.ibb.co/dgsgZ2P/spiderman2.jpg",
+      "name": "Spider Man",
       "price": 14.99,
       "rating": 4.3,
       "seller-name": "Smash Toys",
       "seller-email": "info@smashtoys.com",
-      "category-id": 1,
+      "category-id": 2,
       "available-quantity": 8,
-      "toy-description": "Unleash your inner Hulk and let the smashing begin with these oversized hands."
+      "toy-description": "Unleash your inner Spider and let the smashing begin with these oversized hands."
     }
   ]
   
