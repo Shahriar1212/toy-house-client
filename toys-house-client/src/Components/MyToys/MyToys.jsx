@@ -1,8 +1,58 @@
-import React from 'react';
-import img1 from '../../assets/images/bumble-bee.jpg'
+import { useContext, useEffect, useState } from 'react';
+
+import { AuthContext } from '../../Providers/AuthProviders';
+import MyToysRow from './MyToysRow';
+import Swal from 'sweetalert2';
 
 
 const MyToys = () => {
+
+    const { user } = useContext(AuthContext);
+    const [myToys, setMyToys] = useState([]);
+    const url = `http://localhost:5000/mytoys/?email=${user.email}`;
+
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setMyToys(data));
+    }, [url])
+
+    console.log(myToys);
+
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/toys/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Coffee has been deleted.',
+                                'success'
+                            )
+                            const remaining = myToys.filter(toy => toy._id !== _id);
+                            setMyToys(remaining);
+                        }
+                    })
+            }
+        })
+    }
+
+
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -16,58 +66,9 @@ const MyToys = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* row 1 */}
-                    <tr>
-                        <td>
-                            <div className="flex items-center space-x-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img src={img1} />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Bumble Bee</div>
-                                    <div className="text-sm opacity-50">Moin</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Transformers Toy
-                            <br />
-                            <span className="badge badge-ghost badge-sm">$ 5.99</span>
-                        </td>
-                        <td>34</td>
-                        <th>
-                            <button className="btn btn-warning btn-outline btn-xs mr-2">Update</button>
-                            <button className="btn btn-error btn-outline btn-xs">Delete</button>
-                        </th>
-                    </tr>
-                    {/* row 2 */}
-                    <tr>
-                        <td>
-                            <div className="flex items-center space-x-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img src={img1} />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Bumble Bee</div>
-                                    <div className="text-sm opacity-50">Moin</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Transformers Toy
-                            <br />
-                            <span className="badge badge-ghost badge-sm">$ 5.99</span>
-                        </td>
-                        <td>34</td>
-                        <th>
-                            <button className="btn btn-warning btn-outline btn-xs mr-2">Update</button>
-                            <button className="btn btn-error btn-outline btn-xs">Delete</button>
-                        </th>
-                    </tr>
+                    {
+                        myToys.map(toy => <MyToysRow key={toy._id} toy={toy} handleDelete={handleDelete}></MyToysRow>)
+                    }
 
                 </tbody>
 
