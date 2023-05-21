@@ -31,8 +31,8 @@ const Home = () => {
                     <Tab>Transformers</Tab>
                 </TabList>
 
-                <TabPanel className="flex">
-                    <div className="flex">
+                <TabPanel className="lg:flex">
+                    <div className="lg:flex">
                         {
                             category1Toys.map(toy => <ToyCard key={toy._id}
                                 toy={toy}
@@ -41,8 +41,8 @@ const Home = () => {
                     </div>
                 </TabPanel>
 
-                <TabPanel className="flex">
-                    <div className="flex">
+                <TabPanel className="lg:flex">
+                    <div className="lg:flex">
                         {
                             category2Toys.map(toy => <ToyCard key={toy._id}
                                 toy={toy}
@@ -51,8 +51,8 @@ const Home = () => {
                     </div>
                 </TabPanel>
 
-                <TabPanel className="flex">
-                    <div className="flex">
+                <TabPanel className="lg:flex">
+                    <div className="lg:flex">
                         {
                             category3Toys.map(toy => <ToyCard key={toy._id}
                                 toy={toy}
