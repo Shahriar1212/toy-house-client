@@ -10,10 +10,11 @@ import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { toast } from 'react-toast';
 import { useContext, useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 
 
 const Register = () => {
-
+    useTitle('register');
     const { user, createUser, update, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState('');

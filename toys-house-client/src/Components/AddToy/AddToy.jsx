@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useTitle from "../../hooks/useTitle";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddToy = () => {
-
+    useTitle('Add Toy')
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleAddToy = (event) => {
         event.preventDefault();
@@ -32,6 +36,15 @@ const AddToy = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Added A Toy Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            }
+            navigate('/mytoys')
         })
     }
 

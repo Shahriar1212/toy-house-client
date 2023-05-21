@@ -2,9 +2,10 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
 import img1 from '../../assets/images/spiderman1.jpg'
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const ToyCard = (props) => {
-    console.log(props);
+    useTitle('Toy');
     const { _id, img, name, price, rating } = props.toy;
 
 

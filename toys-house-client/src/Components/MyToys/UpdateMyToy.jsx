@@ -1,13 +1,15 @@
 import React from 'react';
-import { Navigate, useLoaderData } from 'react-router-dom';
+import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateMyToy = () => {
 
+    useTitle('Update Toy')
     const toy = useLoaderData();
     
     const { _id, available_quantity ,toy_description, price  } = toy; 
-
+    const navigate = useNavigate();
     const handleAddToy = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -38,7 +40,7 @@ const UpdateMyToy = () => {
                     confirmButtonText: 'Cool'
                 })
             }
-            Navigate('/mytoys', { replace: true });
+            navigate('/mytoys',);
         })
     }
 

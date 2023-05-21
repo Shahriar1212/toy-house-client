@@ -2,10 +2,12 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import img1 from '../../assets/images/spiderman1.jpg'
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 
 const ToyDetails = () => {
 
+    useTitle('Toy Details')
     const toy = useLoaderData();
     
     const { _id, img, name,available_quantity, seller_email, seller_name,toy_description, price, rating } = toy;

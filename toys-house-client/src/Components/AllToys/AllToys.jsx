@@ -3,9 +3,10 @@ import React from 'react';
 import img1 from '../../assets/images/bumble-bee.jpg'
 import { Link, useLoaderData } from 'react-router-dom';
 import AllToysRow from './AllToysRow';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
-
+    useTitle('All Toys')
     const toys = useLoaderData();
     console.log(toys);
 

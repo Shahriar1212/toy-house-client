@@ -7,9 +7,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { useContext, useState } from 'react';
 import { ToastContainer, toast } from 'react-toast';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
 
+    useTitle('Login')
 
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -29,7 +31,11 @@ const Login = () => {
                 console.log(user);
                 navigate(from, { replace: true });
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+                toast.warn(error.message);
+            });
     }
 
     const handleGoogleSignIn = () => {

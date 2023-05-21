@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const AllToysRow = (props) => {
+    useTitle('All Toys')
 
     const { _id, img, name,available_quantity, seller_email,category_name,  seller_name,toy_description, price, rating } = props.toy;
     return (

@@ -6,15 +6,16 @@ import 'react-tabs/style/react-tabs.css';
 import 'react-tabs/style/react-tabs.css';
 import ToyCard from "../ToyCard/ToyCard";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
 
-
+    useTitle('Home');
     const toys = useLoaderData();
     console.log(toys);
-    const category1Toys = toys.filter(toy => toy.category === 1);
-    const category2Toys = toys.filter(toy => toy.category === 2);
-    const category3Toys = toys.filter(toy => toy.category === 3);
+    const category1Toys = (toys.filter(toy => toy.category === 1)).slice(0, 2);
+    const category2Toys = toys.filter(toy => toy.category === 2).slice(0, 2);
+    const category3Toys = toys.filter(toy => toy.category === 3).slice(0, 2);
     console.log(category1Toys);
 
     return (
