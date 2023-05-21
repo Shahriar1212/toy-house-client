@@ -3,7 +3,7 @@ import logo from '../../assets/logo1.png'
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { useContext, useState } from 'react';
 import { ToastContainer, toast } from 'react-toast';
@@ -14,6 +14,8 @@ const Login = () => {
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState('');
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -25,6 +27,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => console.log(error));
     }
@@ -34,7 +37,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate('/', { replace: true });
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error.message);
@@ -84,7 +87,7 @@ const Login = () => {
                                 </div>
 
                                 <div className="relative mb-6" data-te-input-wrapper-init>
-                                    <input type="text" placeholder="Password" name='password' className="input input-bordered input-accent  w-full" />
+                                    <input type="password" placeholder="Password" name='password' className="input input-bordered input-accent  w-full" />
 
                                 </div>
 
